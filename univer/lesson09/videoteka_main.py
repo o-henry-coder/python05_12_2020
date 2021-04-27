@@ -213,10 +213,13 @@ if __name__ == '__main__':
                 Requests.show_actors_directors()
             elif ans == "5":
                 ChangeInfo.insert_actors()
+                print('The information has been successfully changed')
             elif ans == "6":
                 ChangeInfo.update_actors()
+                print('The information has been successfully changed')
             elif ans == "7":
                 ChangeInfo.delete_actors()
+                print('The actor has been deleted from the database')
             elif ans == "8":
                 ChangeInfo.delete_films()
             elif ans == "9":

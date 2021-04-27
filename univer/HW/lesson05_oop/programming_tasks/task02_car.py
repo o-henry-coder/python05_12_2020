@@ -4,13 +4,12 @@ class Car:
         self.__make = make
         self.__speed = speed
 
-    def accelerate(self, speed):
-        self.__speed = speed
-        speed += 5
+    def accelerate(self):
+        self.__speed +=5
 
     def breek(self, speed):
         self.__speed = speed
-        speed -= 5
+
     def get_speed(self):
         return self.__speed
 

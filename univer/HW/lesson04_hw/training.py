@@ -4,7 +4,7 @@ def get_filename() :
     # print(len(filename_list))
     for i in range(len(filename_list)) :
         filename = filename_list[i]
-        get_kmda_from_file(filename
+        get_kmda_from_file(filename)
 
 
         # with open(i, 'a') as file :

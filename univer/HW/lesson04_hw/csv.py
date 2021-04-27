@@ -16,7 +16,7 @@ if __name__ == '__main__':
     filename = 'january.csv'
     arr_kmda_oklad = get_kmda_from_file(filename)
     with_min_salary = arr_kmda_oklad[0]
-    with_max_salary = arr_kmda_oklad[0]
+    with_max_salary = arr_kmda_oklad[1]
     whole_salary = 0
     for worker in arr_kmda_oklad:
         whole_salary +=worker[1]

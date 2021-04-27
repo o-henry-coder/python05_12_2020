@@ -1,4 +1,4 @@
-from ua.univer.lesson07.inheritance.test_vehicle import Test_Vehicle
+# from ua.univer.lesson07.inheritance.test_vehicle import Test_Vehicle
 from ua.univer.lesson07.inheritance.vehicle import *
 
 
@@ -8,6 +8,7 @@ class Vehicles:
 
     def add_vehicle(self, vehicle):
         self.vehicles.append(vehicle)
+        #return self.vehicles
 
     def get_maxprice(self):
         max = self.vehicles[0][1]
@@ -82,7 +83,7 @@ if __name__ == '__main__':
     print('the min price is ', vehicles_list.get_minprice())
     print('the max price is ', vehicles_list.get_maxprice())
     print(vehicles_list.get_price_less())
-    print(Test_Vehicle.test_get_minprice(vehicles_list))
+    # print(Test_Vehicle.test_get_minprice(vehicles_list))
 
 
     plane11 = CPlane("12°05'20'", 56576, 235, 1958, 2100, 59)
@@ -91,16 +92,42 @@ if __name__ == '__main__':
     plane22 = CPlane("12°05'20'", 56576, 235, 1958, 2100, 59)
     car22 = CCar("14°08'70'", 67678, 90, 1995)
     ship22 = CShip("14°08'70'", 7678, 80, 1900, 'Chernomorsk', 520)
+    amf = Amfibia("12°05'20'", 56576, 235, 1958)
+    batmobile = BatMobile("12°05'20'", 156576, 2535, 1991)
+
     # Test_Vehicle.test_get_minprice(vehicles.get_minprice())
 
 
     machines_list = Vehicles([])
-    machines = [plane11, car11, ship11, plane22, car22, ship22]
+    machines = [plane11, car11, ship11, plane22, car22, ship22, amf, batmobile]
     for machine in machines :
-        # print(machine)
+        #print(machine)
         machines_list.add_vehicle(machine)
-    # print(machines_list)
+    print(machines_list)
     # print('the car objects are ')
     print(machines_list.get_class_objects())
+
+    movers = []
+    for vehicle in machines:
+        if isinstance(vehicle, MoveAble):
+            movers.append(vehicle)
+    print('movers are', movers)
+
+    swimmers = []
+    for vehicle in machines :
+        if isinstance(vehicle, SwimAble) :
+            swimmers.append(vehicle)
+    print('swimmers are', swimmers)
+
+    flying_obj = []
+    for vehicle in machines :
+        if isinstance(vehicle, FlyAble) :
+            flying_obj.append(vehicle)
+    print('flying objects are', flying_obj)
+
+
+
+
+
 
 
